@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using SkillUp.Models;
+using SkillUp.ViewModels;
 
 namespace SkillUp.Controllers
 {

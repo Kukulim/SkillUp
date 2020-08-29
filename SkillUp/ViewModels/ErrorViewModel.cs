@@ -1,6 +1,6 @@
 using System;
 
-namespace SkillUp.Models
+namespace SkillUp.ViewModels
 {
     public class ErrorViewModel
     {
