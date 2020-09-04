@@ -20,6 +20,10 @@ namespace SkillUp.Controllers
 
         public IActionResult Index()
         {
+            if (HttpContext.User.Identity.IsAuthenticated)
+            {
+                return Redirect("/Dashboard/Index");
+            }
             return View();
         }
 
