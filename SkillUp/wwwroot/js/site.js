@@ -1,4 +1,11 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿
+    $("#v-pills-tasks-tab").on("click", function () {
+        $.ajax({
+            url: '/Tasks/LoadTasks',
+            type: 'post',
+            success: function (objOperations) {
+                $("#v-pills-tasks").html(objOperations);
+            }
+        });
+    });
 
-// Write your JavaScript code.

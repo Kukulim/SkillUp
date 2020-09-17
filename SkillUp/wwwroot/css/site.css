@@ -1,8 +1,4 @@
 ﻿@import url(mainStyle.min.css);
-.container-fluid {
-  margin-left: 60px;
-  margin-right: 40px; }
-
 a.navbar-brand {
   white-space: normal;
   text-align: center;
