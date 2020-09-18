@@ -28,7 +28,7 @@ namespace SkillUp.Services
 
         public TasksModel GetTask(string UserId, int taskId)
         {
-            throw new NotImplementedException();
+            return context.Tasks.Where(x => x.UserId == UserId).Where(t=>t.Id == taskId).FirstOrDefault();
         }
 
         public IEnumerable<TasksModel> GetTasks(string UserId)

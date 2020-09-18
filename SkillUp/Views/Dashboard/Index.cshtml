@@ -39,13 +39,12 @@
             </a>
         </div>
     </div>
-    <div class="col-7"">
+    <div class="col-7" ">
         <div class="tab-content" id="v-pills-tabContent">
             <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">1...</div>
             <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">2...</div>
             <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">3...</div>
             <div class="tab-pane fade" id="v-pills-tasks" role="tabpanel" aria-labelledby="v-pills-tasks-tab">
-                <partial name="_Tasks" />
                 <div id="loading" class="text-info">Loading..</div>
             </div>
             <div class="tab-pane fade" id="v-pills-resources" role="tabpanel" aria-labelledby="v-pills-resources-tab">5...</div>
@@ -60,17 +59,15 @@
     </div>
 </div>
 @section Scripts{
-    @*<script>
-        $("#v-pills-tasks-tab").on("click", function () {
+    <script>
+        $("body").delegate("#taskDetailsBtn", "click", function (e) {
             $.ajax({
-                url: '/Tasks/LoadTasks',
+                url: '/Tasks/LoadSingleTask?taskId=' + $(e.target).attr("data"),
                 type: 'post',
                 success: function (objOperations) {
-                    $("#v-pills-tasks").html(objOperations);
-                    console.log(objOperations);
+                    $("#taskDetails").html(objOperations);
                 }
             });
         });
-    </script>*@
-
+    </script>
 }
