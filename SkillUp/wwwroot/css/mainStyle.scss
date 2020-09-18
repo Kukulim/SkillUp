@@ -5,6 +5,29 @@
     height: 35px !important;
     width: 35px !important;
 }
-.TableTaskContent{
-    max-height:20px;
+
+.TaskTabele {
+    border-collapse: collapse;
+    width: 100%;
+
+    td {
+        max-width: 100px
+    }
+
+    th {
+        max-width: 100px
+    }
+}
+
+
+.TableTaskContent {
+    overflow: hidden;
+    white-space: nowrap;
+    min-width: 250px;
+}
+.TaskPopupContent {
+    min-height: 200px;
+    background-color: #e2ebec;
+    border: 1px solid #a2ccd2;
+    color:black;
 }
