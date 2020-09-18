@@ -61,6 +61,7 @@
 @section Scripts{
     <script>
         $("body").delegate("#taskDetailsBtn", "click", function (e) {
+            $("#taskDetails").removeClass("d-none");
             $.ajax({
                 url: '/Tasks/LoadSingleTask?taskId=' + $(e.target).attr("data"),
                 type: 'post',
@@ -70,4 +71,9 @@
             });
         });
     </script>
+<script>
+    $("body").delegate("#taskExitBtn", "click", function (e) {
+        $("#taskDetails").addClass("d-none");       
+        });
+</script>
 }
