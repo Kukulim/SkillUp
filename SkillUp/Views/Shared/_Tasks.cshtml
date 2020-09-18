@@ -7,12 +7,12 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Content)
+                Task:
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Completed)
             </th>
-            <th></th>
+            <th>Details</th>
         </tr>
     </thead>
     <tbody>
@@ -21,7 +21,7 @@
             @foreach (var item in Model)
             {
                 <tr>
-                    <td>
+                    <td class="TableTaskContent">
                         @Html.DisplayFor(modelItem => item.Content)
                     </td>
                     <td>
@@ -29,7 +29,7 @@
                     </td>
                     <td>
                         <button type="button" class="btn btn-primary" id="taskDetailsBtn" data=@item.Id data-toggle="modal" data-target="#exampleModal">
-                            Details
+                            <i class="fa fa-info" aria-hidden="true"></i>
                         </button>
                     </td>
                 </tr>

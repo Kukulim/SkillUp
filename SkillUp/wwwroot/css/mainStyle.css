@@ -4,3 +4,6 @@
 .navicons {
   height: 35px !important;
   width: 35px !important; }
+
+.TableTaskContent {
+  max-height: 20px; }
