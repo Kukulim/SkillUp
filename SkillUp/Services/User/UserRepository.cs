@@ -31,7 +31,16 @@ namespace SkillUp.Services.User
         void IUserRepository.EditUser(ApplicationUser User)
         {
             //dbContext.Entry(User).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-            dbContext.SaveChanges();
+            var userEdit = dbContext.Users.Find(User.Id);
+            if (userEdit != null)
+            {
+                userEdit.UserName = User.UserName;
+                userEdit.FirstName = User.FirstName;
+                userEdit.LastName = User.LastName;
+                userEdit.PhoneNumber = User.PhoneNumber;
+                userEdit.Email = User.Email;
+                dbContext.SaveChanges();
+            }
         }
 
         ApplicationUser IUserRepository.GetUser(string UserId)
