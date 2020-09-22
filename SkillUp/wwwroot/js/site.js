@@ -4,7 +4,6 @@
         type: 'post',
         success: function (objOperations) {
             $("#v-pills-tasks").html(objOperations);
-            $("#loading").hide();
         }
     });
 });

@@ -30,7 +30,7 @@ namespace SkillUp.Services.User
 
         void IUserRepository.EditUser(ApplicationUser User)
         {
-            dbContext.Entry(User).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            //dbContext.Entry(User).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             dbContext.SaveChanges();
         }
 

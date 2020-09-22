@@ -14,6 +14,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SkillUp.Models.ApplicationUser;
 using SkillUp.Services;
+using SkillUp.Services.User;
 
 namespace SkillUp
 {
@@ -41,6 +42,7 @@ namespace SkillUp
             services.AddScoped<Microsoft.AspNetCore.Identity.IUserClaimsPrincipalFactory<ApplicationUser>, AppClaimsPrincipalFactory>();
 
             services.AddScoped<ITaskRepository, TasksRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
 
             services.AddControllersWithViews();
             services.AddRazorPages();
