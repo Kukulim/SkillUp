@@ -30,9 +30,9 @@ namespace SkillUp.Controllers
             return PartialView("_ProfileEdit" , ViewModel);
         }
         [HttpPost]
-        public IActionResult EditProfile(ApplicationUser user)
+        public IActionResult EditProfile(ProfileEditViewModel viewModel)
         {
-            userRepository.EditUser(user);
+            userRepository.EditUser(viewModel.ApplicationUser);
             return RedirectToAction("Index", "Dashboard");
         }
     }

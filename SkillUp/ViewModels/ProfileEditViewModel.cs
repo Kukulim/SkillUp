@@ -11,7 +11,7 @@ namespace SkillUp.ViewModels
     public class ProfileEditViewModel
     {
         public ApplicationUser ApplicationUser { get; set; }
-        public LanguageEnum LanguageEnum { get; set; }
+        //public LanguageEnum LanguageEnum { get; set; }
 
         public List<SelectListItem> LanguageTypes { get; set; } = new List<SelectListItem>();
         public ProfileEditViewModel()

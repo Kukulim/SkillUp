@@ -33,11 +33,10 @@ namespace SkillUp.Services.User
             var userEdit = dbContext.Users.Find(User.Id);
             if (userEdit != null)
             {
-                userEdit.UserName = User.UserName;
                 userEdit.FirstName = User.FirstName;
                 userEdit.LastName = User.LastName;
                 userEdit.PhoneNumber = User.PhoneNumber;
-                userEdit.Email = User.Email;
+                userEdit.LanguageEnum = User.LanguageEnum;
                 dbContext.SaveChanges();
             }
         }

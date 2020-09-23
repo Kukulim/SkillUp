@@ -33,28 +33,23 @@
             </div>
         </div>
 
-        @*@for (int i = 0; i < 5; i++)
-        {
-
-
-        <div class="form-group">
-            @Html.RadioButtonFor(model => model.LanguageEnum, SkillUp.Models.Enums.LanguageEnum(i)) <span>C++</span>
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ApplicationUser.LanguageEnum, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ApplicationUser.LanguageEnum, "", new { @class = "text-danger" })
-            </div>
-        </div>
-        }*@
-
-        <div class="form-group">
+        @*<div class="form-group">
             @Html.LabelFor(model => model.LanguageTypes, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
                 @foreach (var item in Model.LanguageTypes)
                 {
-                    @Html.RadioButtonFor(model => model.ApplicationUser.LanguageEnum, item.Value) <span>@item.Text</span>
+                    <label class="btn btn-primary active">
+                        @Html.RadioButtonFor(model => model.ApplicationUser.LanguageEnum, item.Value) <span>@item.Text</span>
+                    </label>
                 }
             </div>
-    </div>
+        </div>*@
+
+        <div class="form-group">
+            <label asp-for="@Model.ApplicationUser.LanguageEnum"></label>
+            <select asp-for="@Model.ApplicationUser.LanguageEnum" asp-items="Model.LanguageTypes"></select>
+        </div>
+
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
