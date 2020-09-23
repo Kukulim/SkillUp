@@ -30,7 +30,6 @@ namespace SkillUp.Services.User
 
         void IUserRepository.EditUser(ApplicationUser User)
         {
-            //dbContext.Entry(User).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             var userEdit = dbContext.Users.Find(User.Id);
             if (userEdit != null)
             {

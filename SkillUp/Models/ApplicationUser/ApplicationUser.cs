@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using SkillUp.Models.Enums;
 using SkillUp.Models.Person;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,8 @@ namespace SkillUp.Models.ApplicationUser
         [PersonalData]
         [DisplayName("Last Name")]
         public string LastName { get; set; }
+
+        public LanguageEnum LanguageEnum { get; set; }
 
         [ScaffoldColumn(false)]
         public string MentorId { get; set; }

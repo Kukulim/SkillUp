@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using SkillUp.Data;
 using SkillUp.Models.ApplicationUser;
 using SkillUp.Services.User;
+using SkillUp.ViewModels;
 
 namespace SkillUp.Controllers
 {
@@ -23,9 +24,10 @@ namespace SkillUp.Controllers
         [HttpGet]
         public IActionResult EditProfile()
         {
+            var ViewModel = new ProfileEditViewModel();
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var user = userRepository.GetUser(userId);
-            return PartialView("_ProfileEdit" , user);
+            ViewModel.ApplicationUser = userRepository.GetUser(userId);
+            return PartialView("_ProfileEdit" , ViewModel);
         }
         [HttpPost]
         public IActionResult EditProfile(ApplicationUser user)
