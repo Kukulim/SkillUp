@@ -33,18 +33,6 @@
             </div>
         </div>
 
-        @*<div class="form-group">
-            @Html.LabelFor(model => model.LanguageTypes, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                @foreach (var item in Model.LanguageTypes)
-                {
-                    <label class="btn btn-primary active">
-                        @Html.RadioButtonFor(model => model.ApplicationUser.LanguageEnum, item.Value) <span>@item.Text</span>
-                    </label>
-                }
-            </div>
-        </div>*@
-
         <div class="form-group">
             <label asp-for="@Model.ApplicationUser.LanguageEnum"></label>
             <select asp-for="@Model.ApplicationUser.LanguageEnum" asp-items="Model.LanguageTypes"></select>

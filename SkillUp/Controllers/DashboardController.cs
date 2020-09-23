@@ -12,6 +12,11 @@ namespace SkillUp.Controllers
         {
             return View();
         }
-
+        public IActionResult LoadPosts()
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var ViewModel = taskRepository.GetTasks(userId);
+            return PartialView("_Tasks", ViewModel);
+        }
     }
 }

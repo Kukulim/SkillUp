@@ -1,4 +1,6 @@
-﻿$("#v-pills-tasks-tab").on("click", function () {
+﻿//TASK
+
+$("#v-pills-tasks-tab").on("click", function () {
     $.ajax({
         url: '/Tasks/LoadTasks',
         type: 'post',
@@ -22,3 +24,17 @@ $("body").delegate("#taskDetailsBtn", "click", function (e) {
 $("body").delegate("#taskExitBtn", "click", function (e) {
     $("#taskDetails").addClass("d-none");
 });
+
+//PROFILE
+
+$("#v-pills-profile-tab").on("click", function () {
+    $.ajax({
+        url: '/Profile/EditProfile',
+        type: 'get',
+        success: function (objOperations) {
+            $("#v-pills-profile").html(objOperations);
+        }
+    });
+});
+
+//DASHBOARD
