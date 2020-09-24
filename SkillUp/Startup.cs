@@ -15,6 +15,7 @@ using Microsoft.Extensions.Hosting;
 using SkillUp.Models.ApplicationUser;
 using SkillUp.Services;
 using SkillUp.Services.User;
+using SkillUp.Services.Post;
 
 namespace SkillUp
 {
@@ -43,6 +44,7 @@ namespace SkillUp
 
             services.AddScoped<ITaskRepository, TasksRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IPostRepository, PostRepository>();
 
             services.AddControllersWithViews();
             services.AddRazorPages();
