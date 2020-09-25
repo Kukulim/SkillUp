@@ -4,8 +4,9 @@
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
 
+<div id="newPost"></div>
 <p>
-    <a asp-action="Create">Create New</a>
+    <button class="btn btn-info" id="createPost">Create New</button>
 </p>
 <table class="table">
     <thead>

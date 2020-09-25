@@ -42,6 +42,7 @@
     <div class="col-7">
         <div class="tab-content" id="v-pills-tabContent">
             <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                <div id="newPost"></div>
                 <div>
                     <i class="fa fa-spinner fa-spin fa-2x fa-fw"></i>
                     <span>Loading...</span>
@@ -88,16 +89,15 @@
                 loadPosts();
             });
     </script>
-    @*<script>
-            $("body").delegate("#taskDetailsBtn", "click", function (e) {
-                $("#taskDetails").removeClass("d-none");
+    <script>
+            $("body").delegate("#createPost", "click", function () {
                 $.ajax({
-                    url: '/Tasks/LoadSingleTask?taskId=' + $(e.target).attr("data"),
-                    type: 'post',
+                    url: '/Dashboard/NewPost',
+                    type: 'get',
                     success: function (objOperations) {
-                        $("#taskDetails").html(objOperations);
+                        $("#v-pills-home").html(objOperations);
                     }
                 });
             });
-        </script>*@
+        </script>
 }

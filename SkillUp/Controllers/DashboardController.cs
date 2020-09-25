@@ -26,5 +26,10 @@ namespace SkillUp.Controllers
             var ViewModel = postRepository.GetPosts(userId);
             return PartialView("_PostList", ViewModel);
         }
+        public IActionResult NewPost()
+        {
+            return PartialView("_NewPost");
+        }
+
     }
 }
