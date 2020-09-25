@@ -72,17 +72,22 @@
     </div>
 </div>
 @section Scripts{
-    @*<script>
-        $("#v-pills-profile-tab").on("click", function () {
+    <script>
+        function loadPosts() {
             $.ajax({
-                url: '/Profile/EditProfile',
+                url: '/Dashboard/LoadPosts',
                 type: 'get',
                 success: function (objOperations) {
-                    $("#v-pills-profile").html(objOperations);
+                    $("#v-pills-home").html(objOperations);
                 }
+            })
+        };
+
+            $("#v-pills-home-tab").on("click", function () { loadPosts(); });
+            $(document).ready(function () {
+                loadPosts();
             });
-        });
-    </script>*@
+    </script>
     @*<script>
             $("body").delegate("#taskDetailsBtn", "click", function (e) {
                 $("#taskDetails").removeClass("d-none");
