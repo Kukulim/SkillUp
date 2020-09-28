@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using SkillUp.Models;
 using SkillUp.Services;
 using SkillUp.Services.Post;
 using System.Security.Claims;
@@ -26,9 +27,16 @@ namespace SkillUp.Controllers
             var ViewModel = postRepository.GetPosts(userId);
             return PartialView("_PostList", ViewModel);
         }
+        [HttpGet]
         public IActionResult NewPost()
         {
             return PartialView("_NewPost");
+        }
+        [HttpPost]
+        public IActionResult NewPost(PostsModel postsModel)
+        {
+            postRepository.AddPost(postsModel);
+            return RedirectToAction("Index");
         }
 
     }
