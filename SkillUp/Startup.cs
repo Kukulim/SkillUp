@@ -16,6 +16,7 @@ using SkillUp.Models.ApplicationUser;
 using SkillUp.Services;
 using SkillUp.Services.User;
 using SkillUp.Services.Post;
+using ShieldUI.AspNetCore.Mvc;
 
 namespace SkillUp
 {
@@ -46,6 +47,7 @@ namespace SkillUp
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IPostRepository, PostRepository>();
 
+            services.AddShieldUI();
             services.AddControllersWithViews();
             services.AddRazorPages();
         }
@@ -66,6 +68,7 @@ namespace SkillUp
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseShieldUI();
 
             app.UseRouting();
 
